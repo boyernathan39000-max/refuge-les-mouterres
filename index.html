@@ -15,18 +15,15 @@
 
 <header class="menu" id="menu">
   <div class="contenu">
-    <a class="marque" href="#haut">
-      <strong>Refuge les Mouterres</strong>
-      <span>Plateau d'Emparis · 2250 m</span>
-    </a>
+    <a class="marque" href="#haut"><strong>Refuge les Mouterres</strong></a>
     <nav class="liens" id="liens">
       <a href="#refuge">Le refuge</a>
-      <a href="#table">La table</a>
+      <a href="#repas">Repas</a>
       <a href="#tarifs">Tarifs</a>
-      <a href="#venir">Venir</a>
-      <a href="#autour">Autour</a>
+      <a href="#acces">Accès</a>
+      <a href="#activites">Activités</a>
     </nav>
-    <a class="bouton bouton-plein" href="#reserver">Réserver</a>
+    <button class="bouton bouton-plein" data-reserver type="button">Réserver</button>
     <button class="burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false">☰</button>
   </div>
 </header>
@@ -44,12 +41,12 @@
         <span class="etoiles">★★★★★</span>
         <span>135 avis Google</span>
       </span>
-      <h1>Une nuit à 2250 m, face aux glaciers de la Meije</h1>
-      <p>Refuge gardé sur le plateau d'Emparis, étape du GR54 et du GR50. 25 places,
-         des repas faits maison et la montagne pour seul voisin.</p>
+      <h1>Une nuit à 2250 m,<br>face aux glaciers de la Meije</h1>
+      <p>Refuge gardé sur le plateau d'Emparis, étape du GR54 et du GR50.<br>
+         25 places, des repas faits maison et la montagne pour seul voisin.</p>
       <div class="heros-actions">
-        <a class="bouton bouton-plein" href="#reserver">Réserver ma nuitée</a>
-        <a class="bouton bouton-ligne" href="#venir">Comment monter</a>
+        <button class="bouton bouton-plein" data-reserver type="button">Réserver ma nuitée</button>
+        <a class="bouton bouton-ligne" href="#acces">Comment monter</a>
       </div>
     </div>
   </div>
@@ -72,10 +69,6 @@
         <span class="chiffre">GR54 · GR50</span><small>sur les 2 tours</small>
       </li>
       <li>
-        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
-        <span class="chiffre">3 h</span><small>de marche depuis Mizoën</small>
-      </li>
-      <li>
         <svg viewBox="0 0 24 24"><path d="M12 3l2.6 5.6 6 .8-4.4 4.2 1.1 6-5.3-2.9-5.3 2.9 1.1-6L3.4 9.4l6-.8z"/></svg>
         <span class="chiffre">4,7 / 5</span><small>pour 135 avis Google</small>
       </li>
@@ -87,15 +80,14 @@
   <div class="contenu deux-colonnes">
     <div class="monte">
       <span class="sur-titre">Le refuge</span>
-      <h2>Ce qui vous attend en arrivant</h2>
-      <p class="intro">Le refuge est posé sur le plateau d'Emparis, au cœur du parc national des
-         Écrins. On y monte à pied, en 3 h depuis Mizoën. C'est un hébergement
-         collectif : vous partagez le dortoir avec d'autres randonneurs. Les gardiens
-         organisent les nuitées pour séparer les groupes autant que possible.</p>
+      <h2 class="titre-court">Ce qui vous attend</h2>
+      <p class="intro intro-courte">Un hébergement collectif à 2250 m, au cœur du parc national
+         des Écrins. Vous partagez le dortoir avec d'autres randonneurs, dans des cabines que
+         les gardiens attribuent groupe par groupe.</p>
       <ul class="liste-points">
         <li><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>
-            <span><strong>Cabines de 4 ou 5 personnes</strong> en mezzanine, pour
-            25 places au total. Il n'y a pas de chambre individuelle.</span></li>
+            <span><strong>Cabines de 4 ou 5 personnes</strong> en mezzanine, pour 25 places au
+            total. Il n'y a pas de chambre individuelle.</span></li>
         <li><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>
             <span><strong>Couettes fournies.</strong> Apportez votre sac à viande.</span></li>
         <li><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>
@@ -109,11 +101,10 @@
             fins de journée et les jours de pluie.</span></li>
       </ul>
       <div class="action-section">
-        <a class="bouton bouton-sombre" href="#reserver">Réserver ma nuitée</a>
-        <span class="rappel">25 places, une seule saison par an.</span>
+        <button class="bouton bouton-plein" data-reserver type="button">Réserver ma nuitée</button>
       </div>
     </div>
-    <div class="mosaique monte">
+    <div class="mosaique mosaique-basse monte">
       <img class="large" src="images/refuge-facade.jpg" alt="La façade du refuge les Mouterres et sa terrasse, sur l'alpage">
       <img class="haute" src="images/refuge-dortoir.jpg" alt="Le dortoir du refuge, cabines en bois en mezzanine">
       <img src="images/refuge-salle.jpg" alt="La salle commune du refuge, tables et bibliothèque">
@@ -123,15 +114,13 @@
   </div>
 </section>
 
-<section class="section" id="table">
+<section class="section section-sombre" id="repas">
   <div class="contenu">
     <div class="entete-section monte">
-      <span class="sur-titre">La table</span>
-      <h2>Les repas sont préparés sur place</h2>
-      <p class="intro">La gardienne cuisine au refuge. Le soir, la demi-pension comprend une
-         soupe de légumes, une viande garnie, du fromage et un dessert. Le matin, les boissons
-         chaudes, le pain, les biscottes, le beurre, la confiture, le fromage et le jambon.
-         Les menus végétariens sont préparés avec plaisir : signalez-les 48 h à l'avance.</p>
+      <span class="sur-titre">Repas</span>
+      <h2>Tout est préparé sur place</h2>
+      <p class="intro intro-courte">La gardienne cuisine au refuge, du petit déjeuner au repas
+         du soir. Les menus végétariens sont préparés avec plaisir, à signaler 48 h à l'avance.</p>
     </div>
     <div class="table-grille monte">
       <figure>
@@ -152,15 +141,7 @@
       </figure>
     </div>
     <div class="cartes trois monte" style="margin-top:1.6rem">
-      <article class="carte">
-        <div class="carte-corps">
-          <span class="etiquette">Le soir</span>
-          <h3>Le repas du soir</h3>
-          <p>Soupe de légumes, viande garnie, fromage, dessert. Il est compris dans la
-             demi-pension et se prend aussi seul.</p>
-        </div>
-      </article>
-      <article class="carte">
+      <article class="carte carte-sombre">
         <div class="carte-corps">
           <span class="etiquette">Le matin</span>
           <h3>Le petit déjeuner</h3>
@@ -168,62 +149,81 @@
              de repartir sur le GR.</p>
         </div>
       </article>
-      <article class="carte">
+      <article class="carte carte-sombre">
         <div class="carte-corps">
-          <span class="etiquette">Sur réservation</span>
+          <span class="etiquette">À emporter</span>
           <h3>Le pique-nique</h3>
           <p>Une galette avec la salade du jardin, du thon et des tomates, une salade
              individuelle maison, du chocolat et une petite douceur.</p>
         </div>
       </article>
-      </div>
-    <div class="action-section monte">
-      <a class="bouton bouton-sombre" href="#reserver">Réserver une demi-pension</a>
-      <span class="rappel">Menus végétariens et pique-niques à signaler 48 h avant.</span>
+      <article class="carte carte-sombre">
+        <div class="carte-corps">
+          <span class="etiquette">Le soir</span>
+          <h3>Le repas du soir</h3>
+          <p>Soupe de légumes, viande garnie, fromage, dessert. Il est compris dans la
+             demi-pension et se prend aussi seul.</p>
+        </div>
+      </article>
+    </div>
+    <div class="action-section action-centree monte">
+      <button class="bouton bouton-plein" data-reserver type="button">Réserver une demi-pension</button>
     </div>
   </div>
 </section>
 
-<section class="section fond-clair" id="tarifs">
+<section class="section" id="tarifs">
   <div class="contenu">
-    <div class="entete-section monte">
-      <span class="sur-titre">Tarifs 2026</span>
-      <h2>Ce que coûte une nuit au refuge</h2>
-      <p class="intro">Les prix s'entendent par personne. Le règlement se fait sur place.</p>
+    <div class="entete-section entete-centree monte">
+      <span class="sur-titre">Tarifs</span>
+      <h2>Ce qui se règle sur place</h2>
+      <p class="intro intro-courte">Les repas et le bivouac se paient au refuge, par chèque ou
+         en espèces. Le prix de votre nuitée s'affiche au moment de la réservation.</p>
     </div>
-    <div class="tarifs monte">
-      <article class="tarif phare">
-        <span class="etiquette">La formule la plus prise</span>
-        <h3>Demi-pension, adulte</h3>
-        <span class="prix">56,50 €<small> / personne</small></span>
-        <p>La nuitée, le repas du soir et le petit déjeuner.</p>
+
+    <div class="tarifs-repas monte">
+      <article class="tarif-ligne">
+        <span class="tarif-icone">
+          <svg viewBox="0 0 24 24"><path d="M6 3v8a3 3 0 006 0V3M9 11v10M18 3c-1.5 2-2 4-2 6s.5 3 2 3v9"/></svg>
+        </span>
+        <span class="tarif-texte">
+          <strong>Repas du soir</strong>
+          Soupe de légumes, viande garnie, fromage, dessert.
+        </span>
+        <span class="tarif-prix">26 €</span>
       </article>
-      <article class="tarif">
-        <h3>Demi-pension, moins de 12 ans</h3>
-        <span class="prix">40 €<small> / enfant</small></span>
-        <p>La même formule, au tarif enfant.</p>
+      <article class="tarif-ligne">
+        <span class="tarif-icone">
+          <svg viewBox="0 0 24 24"><path d="M4 9h16l-1.5 11H5.5zM8 9V6a4 4 0 118 0v3"/></svg>
+        </span>
+        <span class="tarif-texte">
+          <strong>Pique-nique</strong>
+          Sur réservation uniquement. Version végétarienne possible.
+        </span>
+        <span class="tarif-prix">13 €</span>
       </article>
-      <article class="tarif">
-        <h3>Accompagnateur en montagne</h3>
-        <span class="prix">35 €<small> / AMM</small></span>
-        <p>Le tarif réservé aux accompagnateurs qui encadrent un groupe.</p>
-      </article>
-      <article class="tarif">
-        <h3>Repas du soir seul</h3>
-        <span class="prix">26 €<small> / personne</small></span>
-        <p>Sans la nuitée, pour ceux qui dorment ailleurs sur le plateau.</p>
-      </article>
-      <article class="tarif">
-        <h3>Pique-nique</h3>
-        <span class="prix">13 €<small> / personne</small></span>
-        <p>Sur réservation uniquement. Version végétarienne possible.</p>
-      </article>
-      <article class="tarif">
-        <h3>Taxe de bivouac</h3>
-        <span class="prix">3 €<small> / personne</small></span>
-        <p>Pour un bivouac autour du refuge. Présentez-vous au gardien en arrivant.</p>
+      <article class="tarif-ligne">
+        <span class="tarif-icone">
+          <svg viewBox="0 0 24 24"><path d="M12 4L4 20h16zM12 4v16"/></svg>
+        </span>
+        <span class="tarif-texte">
+          <strong>Taxe de bivouac</strong>
+          Pour un bivouac autour du refuge. Présentez-vous au gardien en arrivant.
+        </span>
+        <span class="tarif-prix">3 €</span>
       </article>
     </div>
+
+    <div class="bloc-reservation monte">
+      <div class="bloc-reservation-texte">
+        <span class="etiquette etiquette-claire">Nuitée et demi-pension</span>
+        <h3>Réservez votre place au refuge</h3>
+        <p>Choisissez vos dates et le nombre de personnes : le prix de la nuitée et de la
+           demi-pension s'affiche aussitôt, selon les places encore libres.</p>
+      </div>
+      <button class="bouton bouton-plein bouton-large" data-reserver type="button">Réserver le refuge</button>
+    </div>
+
     <div class="note-paiement monte">
       <p><strong>Le règlement se fait sur place, par chèque ou en espèces.</strong> Il n'y a
          pas de lecteur de carte bancaire au refuge. Des arrhes sont demandées à la
@@ -234,10 +234,10 @@
   </div>
 </section>
 
-<section class="section sur-photo" id="venir" style="background-image:url('images/fond-rasant.jpg')">
+<section class="section sur-photo" id="acces" style="background-image:url('images/fond-rasant.jpg')">
   <div class="contenu">
     <div class="entete-section monte">
-      <span class="sur-titre">L'accès</span>
+      <span class="sur-titre">Accès</span>
       <h2>4 chemins montent au refuge</h2>
       <p class="intro">Le refuge se rejoint uniquement à pied. Choisissez votre départ selon
          le versant d'où vous arrivez.</p>
@@ -290,10 +290,10 @@
   </div>
 </section>
 
-<section class="section" id="autour">
+<section class="section" id="activites">
   <div class="contenu">
     <div class="entete-section monte">
-      <span class="sur-titre">Autour du refuge</span>
+      <span class="sur-titre">Activités</span>
       <h2>Les randonnées partent de la porte</h2>
       <p class="intro">Le plateau d'Emparis est un belvédère sur la face nord de la Meije et
          sur le Râteau. Voici ce que les gardiens conseillent le plus souvent.</p>
@@ -336,9 +336,8 @@
         </div>
       </article>
     </div>
-    <div class="action-section monte">
-      <a class="bouton bouton-sombre" href="#reserver">Réserver ma nuitée</a>
-      <span class="rappel">Les gardiens vous conseillent l'itinéraire selon la météo du jour.</span>
+    <div class="action-section action-centree monte">
+      <button class="bouton bouton-plein" data-reserver type="button">Réserver ma nuitée</button>
     </div>
   </div>
 </section>
@@ -349,82 +348,67 @@
       <span class="gros">4,7</span>
       <div style="text-align:left">
         <div class="etoiles" style="font-size:1.2rem;color:var(--or)">★★★★★</div>
-        <p style="margin:0">135 avis sur Google · 4,4 sur 5 sur Tripadvisor</p>
+        <p style="margin:0">135 avis sur Google, dont 119 notés 5 étoiles</p>
       </div>
     </div>
-    <div class="avis monte">
-      <blockquote>
-        <div class="etoiles" style="color:var(--or)">★★★★★</div>
-        <p>« L'équipe du refuge est d'une gentillesse incroyable, ils vous accueillent
-           chaleureusement et ils ont toujours le mot pour rire. De bon conseil pour les
-           itinéraires du plateau. »</p>
-        <footer>Avis Google</footer>
-      </blockquote>
-      <blockquote>
-        <div class="etoiles" style="color:var(--or)">★★★★★</div>
-        <p>« Première expérience entre amies en refuge. Tout était parfait : la gentillesse et
-           la disponibilité des gardiens, le lieu avec une vue magnifique, la propreté du
-           refuge, les repas faits maison. »</p>
-        <footer>Avis Google</footer>
-      </blockquote>
-      <blockquote>
-        <div class="etoiles" style="color:var(--or)">★★★★★</div>
-        <p>« Passage d'une nuit en demi-pension en famille, première fois pour nos 6 et 10 ans.
-           Tout le monde a été conquis : la nourriture, le confort des couchages, la
-           disponibilité des gardiens. »</p>
-        <footer>Avis Google</footer>
-      </blockquote>
+  </div>
+  <div class="bande-avis">
+    <div class="bande-avis-piste" id="piste-avis">
+      <blockquote><div class="etoiles">★★★★★</div><p>« L'équipe du refuge est d'une gentillesse incroyable, ils vous accueillent chaleureusement et ils ont toujours le mot pour rire. De bon conseil pour les itinéraires du plateau. »</p><footer>Jessy R.</footer></blockquote>
+      <blockquote><div class="etoiles">★★★★★</div><p>« Bonne ambiance et très bon accueil. La vue est incroyable, on peut aussi observer des chamois. Demi-pension au top, bien servi et c'est bon. Couchage en dortoir confortable. »</p><footer>Lionel M.</footer></blockquote>
+      <blockquote><div class="etoiles">★★★★★</div><p>« Première expérience entre amies en refuge. Tout était parfait : la gentillesse et la disponibilité des gardiens, le lieu avec une vue magnifique, la propreté du refuge, les repas faits maison. »</p><footer>Frédérique B.</footer></blockquote>
+      <blockquote><div class="etoiles">★★★★★</div><p>« Passage d'une nuit en demi-pension en famille, première fois pour nos 6 et 10 ans. Tout le monde a été conquis : la nourriture, le confort des couchages, la disponibilité des gardiens. »</p><footer>Boune S.</footer></blockquote>
+      <blockquote><div class="etoiles">★★★★★</div><p>« Raphaël et Stéphanie sont des hôtes incroyables. Notre trek a été embelli par leur accueil et leur générosité. »</p><footer>Élodie L.</footer></blockquote>
+      <blockquote><div class="etoiles">★★★★★</div><p>« Super nuit au refuge des Mouterres. Nous avons passé une nuit en demi-pension avec mon groupe d'amis randonneurs, 15 personnes. On se sent accueilli chaleureusement, le refuge est propre et fonctionnel. Le repas du soir était délicieux. »</p><footer>Émilie C.</footer></blockquote>
+      <blockquote><div class="etoiles">★★★★★</div><p>« Gîte tenu par un couple fort sympathique, beau partage avec eux sur le territoire et l'environnement. Nourriture et couchage excellents. »</p><footer>Michel M.</footer></blockquote>
+      <blockquote><div class="etoiles">★★★★★</div><p>« Super expérience. Le personnel est très agréable et donne de super conseils. La vue est splendide et vous pourrez même admirer les animaux des montagnes. »</p><footer>Paul S.</footer></blockquote>
+      <blockquote><div class="etoiles">★★★★★</div><p>« Nous sommes venus le 2 août au soir et nous avons été extrêmement bien accueillis dans le refuge. Nous tenons donc à vous remercier. »</p><footer>Romain F.</footer></blockquote>
+      <blockquote><div class="etoiles">★★★★★</div><p>« Nous nous sommes rendus avec notre chien pour le week-end du 15 août. Nous avons eu un super accueil, un temps magnifique et un dîner formidable. À l'année prochaine. »</p><footer>Chloé Y.</footer></blockquote>
     </div>
+  </div>
+  <div class="contenu" style="text-align:center;margin-top:2.4rem">
+    <a class="bouton bouton-sombre" href="https://www.google.com/maps?cid=14616006006192825225" target="_blank" rel="noopener">Lire les avis sur Google</a>
   </div>
 </section>
 
-<section class="section reserver" id="reserver">
+<section class="section reserver" id="contact">
   <div class="contenu">
     <div class="entete-section monte">
-      <span class="sur-titre">Réservation</span>
-      <h2>Réservez votre nuitée</h2>
-      <p class="intro" style="color:var(--texte-clair)">Indiquez vos dates et votre formule.
-         La gardienne vous confirme la place et vous dit comment régler les arrhes.</p>
+      <span class="sur-titre">Contact</span>
+      <h2>Une question avant de monter ?</h2>
+      <p class="intro" style="color:var(--texte-clair)">Un doute sur l'itinéraire, un régime
+         alimentaire, un groupe à placer : écrivez, la gardienne vous répond.</p>
     </div>
+
+    <div class="coordonnees-haut monte">
+      <a href="tel:+33667394807">
+        <svg viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1 19.5 19.5 0 01-6-6A19.8 19.8 0 012.1 4.2 2 2 0 014.1 2h3a2 2 0 012 1.7c.1 1 .4 1.9.7 2.8a2 2 0 01-.5 2.1L8.1 9.9a16 16 0 006 6l1.3-1.2a2 2 0 012.1-.5c.9.3 1.8.6 2.8.7a2 2 0 011.7 2z"/></svg>
+        <span><strong>06 67 39 48 07</strong>Le plus simple en saison</span>
+      </a>
+      <a href="tel:+33687157079">
+        <svg viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1 19.5 19.5 0 01-6-6A19.8 19.8 0 012.1 4.2 2 2 0 014.1 2h3a2 2 0 012 1.7c.1 1 .4 1.9.7 2.8a2 2 0 01-.5 2.1L8.1 9.9a16 16 0 006 6l1.3-1.2a2 2 0 012.1-.5c.9.3 1.8.6 2.8.7a2 2 0 011.7 2z"/></svg>
+        <span><strong>06 87 15 79 07</strong>Second numéro du refuge</span>
+      </a>
+      <a href="mailto:refugelesmouterres@orange.fr">
+        <svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 6 10-6"/></svg>
+        <span><strong>refugelesmouterres@orange.fr</strong>À privilégier hors saison</span>
+      </a>
+      <span class="sans-lien">
+        <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 1118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        <span><strong>Plateau d'Emparis, 38142 Mizoën</strong>Accès à pied uniquement</span>
+      </span>
+    </div>
+
     <div class="deux-colonnes">
       <form class="formulaire monte" id="formulaire">
         <div class="ligne-double">
           <div class="champ">
-            <label for="arrivee">Date d'arrivée</label>
-            <input type="date" id="arrivee" name="arrivee" required>
+            <label for="prenom">Prénom</label>
+            <input type="text" id="prenom" name="prenom" required>
           </div>
           <div class="champ">
-            <label for="nuits">Nombre de nuits</label>
-            <input type="number" id="nuits" name="nuits" min="1" value="1" required>
-          </div>
-        </div>
-        <div class="ligne-double">
-          <div class="champ">
-            <label for="adultes">Adultes</label>
-            <input type="number" id="adultes" name="adultes" min="0" value="2" required>
-          </div>
-          <div class="champ">
-            <label for="enfants">Enfants de moins de 12 ans</label>
-            <input type="number" id="enfants" name="enfants" min="0" value="0">
-          </div>
-        </div>
-        <div class="champ">
-          <label for="formule">Formule</label>
-          <select id="formule" name="formule">
-            <option>Demi-pension</option>
-            <option>Repas du soir seul</option>
-            <option>Groupe encadré par un accompagnateur</option>
-            <option>Bivouac autour du refuge</option>
-          </select>
-        </div>
-        <div class="ligne-double">
-          <div class="champ">
-            <label for="nom">Votre nom</label>
+            <label for="nom">Nom</label>
             <input type="text" id="nom" name="nom" required>
-          </div>
-          <div class="champ">
-            <label for="telephone">Téléphone</label>
-            <input type="tel" id="telephone" name="telephone" required>
           </div>
         </div>
         <div class="champ">
@@ -432,51 +416,26 @@
           <input type="email" id="courriel" name="courriel" required>
         </div>
         <div class="champ">
-          <label for="message">Régime alimentaire, pique-nique, questions</label>
-          <textarea id="message" name="message" placeholder="Menus végétariens à signaler 48 h avant. Pique-nique sur réservation."></textarea>
+          <label for="question">Votre question</label>
+          <textarea id="question" name="question" rows="5" required placeholder="Itinéraire, régime alimentaire, groupe, bivouac, matériel à prévoir."></textarea>
         </div>
-        <button type="submit" class="bouton bouton-plein">Envoyer ma demande</button>
+        <label class="case-accord">
+          <input type="checkbox" id="accord" name="accord" required>
+          <span>J'accepte que ces informations soient utilisées pour me répondre. Elles ne
+                servent à rien d'autre et ne sont transmises à personne.</span>
+        </label>
+        <button type="submit" class="bouton bouton-plein">Envoyer ma question</button>
         <p id="retour-formulaire" style="display:none;font-size:.95rem;color:var(--or-clair)"></p>
       </form>
 
       <div class="monte">
-        <h3 style="color:#fff">Ce qui se passe ensuite</h3>
-        <ol class="suite">
-          <li><span class="num">1</span><div><strong>Vous envoyez votre demande</strong>
-              <span>Vos dates, le nombre de personnes et votre formule.</span></div></li>
-          <li><span class="num">2</span><div><strong>La gardienne vous répond</strong>
-              <span>Par courriel jusqu'à fin avril, par téléphone en saison : sur les pistes,
-              il est difficile de consulter les messages.</span></div></li>
-          <li><span class="num">3</span><div><strong>Les arrhes bloquent votre place</strong>
-              <span>Elles ne sont pas encaissées. Elles restent acquises au refuge en cas
-              d'annulation après le 15 juin.</span></div></li>
-          <li><span class="num">4</span><div><strong>Vous réglez en arrivant</strong>
-              <span>Par chèque ou en espèces. Il n'y a pas de lecteur de carte au refuge.</span></div></li>
-        </ol>
-
-        <div class="coordonnees">
-          <a href="tel:+33667394807">
-            <svg viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1 19.5 19.5 0 01-6-6A19.8 19.8 0 012.1 4.2 2 2 0 014.1 2h3a2 2 0 012 1.7c.1 1 .4 1.9.7 2.8a2 2 0 01-.5 2.1L8.1 9.9a16 16 0 006 6l1.3-1.2a2 2 0 012.1-.5c.9.3 1.8.6 2.8.7a2 2 0 011.7 2z"/></svg>
-            06 67 39 48 07
-          </a>
-          <a href="tel:+33687157079">
-            <svg viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1 19.5 19.5 0 01-6-6A19.8 19.8 0 012.1 4.2 2 2 0 014.1 2h3a2 2 0 012 1.7c.1 1 .4 1.9.7 2.8a2 2 0 01-.5 2.1L8.1 9.9a16 16 0 006 6l1.3-1.2a2 2 0 012.1-.5c.9.3 1.8.6 2.8.7a2 2 0 011.7 2z"/></svg>
-            06 87 15 79 07
-          </a>
-          <a href="mailto:refugelesmouterres@orange.fr">
-            <svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 6 10-6"/></svg>
-            refugelesmouterres@orange.fr
-          </a>
-          <span>
-            <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 1118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-            Plateau d'Emparis, 38142 Mizoën
-          </span>
-        </div>
-
         <div class="carte-lieu">
           <iframe title="Le refuge les Mouterres sur la carte" loading="lazy"
             src="https://www.google.com/maps?q=45.0552839,6.2128893&hl=fr&z=13&output=embed"></iframe>
         </div>
+        <p style="margin-top:1.3rem;font-size:.95rem;color:var(--texte-clair)">En saison, les
+           gardiens sont sur les pistes et consultent peu leurs messages : le téléphone reste
+           le moyen le plus sûr de les joindre. Hors saison, le courriel est préférable.</p>
       </div>
     </div>
   </div>
@@ -490,13 +449,72 @@
     </div>
     <nav>
       <a href="#refuge">Le refuge</a>
+      <a href="#repas">Repas</a>
       <a href="#tarifs">Tarifs</a>
-      <a href="#venir">Venir</a>
-      <a href="#reserver">Réserver</a>
+      <a href="#acces">Accès</a>
+      <a href="#contact">Contact</a>
       <a href="https://www.google.com/maps?cid=14616006006192825225" target="_blank" rel="noopener">Avis Google</a>
     </nav>
   </div>
 </footer>
+
+<div class="voile-panneau" id="voile" hidden></div>
+<aside class="panneau" id="panneau" aria-label="Réservation" aria-hidden="true">
+  <header class="panneau-haut">
+    <div>
+      <strong>Réserver</strong>
+      <span>Étape 1 sur 4</span>
+    </div>
+    <button class="panneau-fermer" id="fermer-panneau" aria-label="Fermer la réservation">×</button>
+  </header>
+  <ol class="panneau-etapes">
+    <li class="active">1. Dates</li>
+    <li>2. Formule</li>
+    <li>3. Coordonnées</li>
+    <li>4. Confirmation</li>
+  </ol>
+  <div class="panneau-corps">
+    <h4>Nombre de personnes</h4>
+    <div class="compteur">
+      <div><strong>Adultes</strong><span>12 ans et plus</span></div>
+      <div class="compteur-boutons">
+        <button type="button" data-pas="-1" data-cible="adultes" aria-label="Un adulte de moins">−</button>
+        <output id="adultes">2</output>
+        <button type="button" data-pas="1" data-cible="adultes" aria-label="Un adulte de plus">+</button>
+      </div>
+    </div>
+    <div class="compteur">
+      <div><strong>Enfants</strong><span>Moins de 12 ans</span></div>
+      <div class="compteur-boutons">
+        <button type="button" data-pas="-1" data-cible="enfants" aria-label="Un enfant de moins">−</button>
+        <output id="enfants">0</output>
+        <button type="button" data-pas="1" data-cible="enfants" aria-label="Un enfant de plus">+</button>
+      </div>
+    </div>
+
+    <h4>Vos dates</h4>
+    <div class="calendrier">
+      <div class="calendrier-haut">
+        <button type="button" id="mois-avant" aria-label="Mois précédent">‹</button>
+        <strong id="mois-titre">Juillet 2027</strong>
+        <button type="button" id="mois-apres" aria-label="Mois suivant">›</button>
+      </div>
+      <div class="calendrier-jours">
+        <span>L</span><span>M</span><span>M</span><span>J</span><span>V</span><span>S</span><span>D</span>
+      </div>
+      <div class="calendrier-grille" id="grille"></div>
+      <p class="calendrier-legende">Libre · Barré : complet · Grisé : hors saison</p>
+      <p class="calendrier-choix" id="choix-dates">Choisissez votre date d'arrivée.</p>
+    </div>
+
+    <p class="panneau-demo">Exemple de démonstration : les disponibilités affichées ici ne sont
+       pas celles du refuge.</p>
+  </div>
+  <footer class="panneau-bas">
+    <button class="bouton bouton-plein" id="valider-dates" type="button">Valider mes dates</button>
+    <p id="retour-panneau"></p>
+  </footer>
+</aside>
 
 <script src="js/site.js"></script>
 </body>

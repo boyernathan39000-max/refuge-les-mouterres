@@ -69,8 +69,8 @@ p{color:var(--texte-doux)}
 }
 .menu.pose{background:rgba(28,33,37,.94);box-shadow:0 2px 18px rgba(0,0,0,.22)}
 .menu .contenu{display:flex;align-items:center;justify-content:space-between;gap:1.5rem}
-.marque{display:flex;flex-direction:column;line-height:1.1;color:var(--blanc)}
-.marque strong{font-family:"Fraunces",Georgia,serif;font-size:1.12rem;letter-spacing:.01em}
+.marque{display:flex;align-items:center;line-height:1.1;color:var(--blanc)}
+.marque strong{font-family:"Fraunces",Georgia,serif;font-size:1.2rem;letter-spacing:.01em}
 .marque span{font-size:.7rem;letter-spacing:.17em;text-transform:uppercase;color:var(--or-clair)}
 .liens{display:flex;gap:1.9rem;align-items:center}
 .liens a{color:var(--texte-clair);font-size:.95rem;font-weight:500;position:relative;padding:.3rem 0}
@@ -119,7 +119,7 @@ p{color:var(--texte-doux)}
 
 /* ---------- Bande de repères ---------- */
 .reperes{background:var(--granit);color:var(--brume);padding:2.6rem 0}
-.reperes ul{list-style:none;display:grid;grid-template-columns:repeat(5,1fr);gap:1.4rem;text-align:center}
+.reperes ul{list-style:none;display:grid;grid-template-columns:repeat(4,1fr);gap:1.6rem;text-align:center}
 .reperes li{display:flex;flex-direction:column;align-items:center;gap:.35rem}
 .reperes svg{width:26px;height:26px;stroke:var(--or);fill:none;stroke-width:1.6}
 .reperes .chiffre{font-size:1.45rem;color:var(--blanc)}
@@ -324,3 +324,203 @@ p{color:var(--texte-doux)}
   .note-paiement{padding:1.1rem 1.2rem}
   .action-section{gap:.7rem}
 }
+
+/* =====================================================================
+   Retours du 20 novembre : sections renommees, section repas sombre,
+   tarifs redessines, bande d avis defilante, panneau de reservation.
+   ===================================================================== */
+
+/* ---------- Titres et intros resserres ---------- */
+.titre-court{white-space:nowrap}
+.intro-courte{font-size:1.02rem;max-width:40rem}
+.entete-centree{margin-left:auto;margin-right:auto;text-align:center}
+.entete-centree .intro{margin-left:auto;margin-right:auto}
+.action-centree{justify-content:center}
+.mosaique-basse{margin-top:2.6rem}
+
+/* ---------- Section sur fond sombre ---------- */
+.section-sombre{background:var(--granit);color:var(--brume)}
+.section-sombre h2,.section-sombre h3{color:var(--blanc)}
+.section-sombre p{color:var(--texte-clair)}
+.section-sombre .sur-titre{color:var(--or-clair)}
+.carte-sombre{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.16)}
+.carte-sombre:hover{background:rgba(255,255,255,.09)}
+.carte-sombre .etiquette{background:rgba(210,150,63,.2);color:var(--or-clair)}
+.carte-sombre p{color:var(--texte-clair)}
+
+/* ---------- Tarifs : lignes et bloc de reservation ---------- */
+.tarifs-repas{display:grid;gap:.9rem;max-width:52rem;margin:0 auto}
+.tarif-ligne{
+  display:grid;grid-template-columns:52px 1fr auto;align-items:center;gap:1.3rem;
+  background:var(--blanc);border:1px solid var(--ligne);border-radius:var(--rayon);
+  padding:1.2rem 1.6rem;transition:border-color .25s ease,transform .25s ease;
+}
+.tarif-ligne:hover{border-color:var(--or);transform:translateX(3px)}
+.tarif-icone{
+  width:52px;height:52px;border-radius:50%;display:grid;place-items:center;
+  background:rgba(210,150,63,.13);
+}
+.tarif-icone svg{width:24px;height:24px;stroke:var(--or);fill:none;stroke-width:1.6}
+.tarif-texte{display:flex;flex-direction:column;gap:.15rem;font-size:.93rem;color:var(--texte-doux)}
+.tarif-texte strong{font-family:"Fraunces",Georgia,serif;font-size:1.12rem;color:var(--texte);font-weight:600}
+.tarif-prix{font-family:"Fraunces",Georgia,serif;font-size:1.85rem;color:var(--granit);white-space:nowrap}
+
+.bloc-reservation{
+  max-width:52rem;margin:2.2rem auto 0;display:grid;
+  grid-template-columns:1fr auto;align-items:center;gap:2rem;
+  background:var(--granit);border-radius:var(--rayon);padding:2.2rem 2.4rem;
+  box-shadow:var(--ombre);position:relative;overflow:hidden;
+}
+.bloc-reservation::after{
+  content:"";position:absolute;right:-70px;top:-70px;width:220px;height:220px;
+  border-radius:50%;background:rgba(210,150,63,.14);
+}
+.bloc-reservation-texte{position:relative;z-index:1}
+.bloc-reservation h3{color:var(--blanc);font-size:1.4rem;margin:.1rem 0 .5rem}
+.bloc-reservation p{color:var(--texte-clair);font-size:.96rem;max-width:30rem}
+.etiquette-claire{background:rgba(210,150,63,.22);color:var(--or-clair)}
+.bouton-large{position:relative;z-index:1;padding:1.05rem 2rem;font-size:1.02rem}
+
+/* ---------- Bande d avis defilante ---------- */
+.bande-avis{overflow:hidden;padding:.6rem 0 1rem;-webkit-mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent);mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent)}
+.bande-avis-piste{display:flex;gap:1.3rem;width:max-content;animation:defile 85s linear infinite}
+.bande-avis:hover .bande-avis-piste{animation-play-state:paused}
+.bande-avis blockquote{
+  flex:0 0 352px;background:var(--blanc);border:1px solid var(--ligne);
+  border-radius:var(--rayon);padding:1.6rem;display:flex;flex-direction:column;gap:.8rem;
+  box-shadow:var(--ombre-douce);
+}
+.bande-avis blockquote .etoiles{color:var(--or)}
+.bande-avis blockquote p{font-size:.95rem;color:var(--texte);flex:1;margin:0}
+.bande-avis blockquote footer{font-size:.85rem;color:var(--texte-doux);font-weight:600}
+@keyframes defile{from{transform:translateX(0)}to{transform:translateX(calc(-50% - .65rem))}}
+@media (prefers-reduced-motion:reduce){
+  .bande-avis{overflow-x:auto}
+  .bande-avis-piste{animation:none}
+}
+
+/* ---------- Coordonnees remontees ---------- */
+.coordonnees-haut{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-bottom:3rem;
+}
+.coordonnees-haut a,.coordonnees-haut .sans-lien{
+  display:flex;gap:.85rem;align-items:flex-start;
+  background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);
+  border-radius:var(--rayon);padding:1.1rem 1.2rem;transition:border-color .2s ease,background .2s ease;
+}
+.coordonnees-haut a:hover{border-color:var(--or);background:rgba(255,255,255,.1)}
+.coordonnees-haut svg{width:21px;height:21px;flex:0 0 21px;margin-top:.15rem;stroke:var(--or);fill:none;stroke-width:1.7}
+.coordonnees-haut span span,.coordonnees-haut a span{display:flex;flex-direction:column;gap:.15rem;font-size:.84rem;color:rgba(236,234,229,.68)}
+.coordonnees-haut strong{color:var(--blanc);font-size:.97rem;word-break:break-word}
+
+/* ---------- Case de consentement ---------- */
+.case-accord{display:flex;gap:.75rem;align-items:flex-start;font-size:.87rem;color:rgba(236,234,229,.78);cursor:pointer}
+.case-accord input{margin-top:.2rem;width:17px;height:17px;flex:0 0 17px;accent-color:var(--or)}
+
+/* ---------- Panneau de reservation ---------- */
+.voile-panneau{
+  position:fixed;inset:0;background:rgba(16,20,23,.55);backdrop-filter:blur(2px);
+  z-index:80;opacity:0;transition:opacity .3s ease;
+}
+.voile-panneau.vu{opacity:1}
+.panneau{
+  position:fixed;top:0;right:0;bottom:0;width:min(420px,100vw);z-index:90;
+  background:var(--brume-chaude);display:flex;flex-direction:column;
+  transform:translateX(102%);transition:transform .38s cubic-bezier(.4,0,.2,1);
+  box-shadow:-18px 0 50px rgba(16,20,23,.3);
+}
+.panneau.ouvert{transform:none}
+.panneau-haut{
+  display:flex;align-items:center;justify-content:space-between;gap:1rem;
+  padding:1.3rem 1.5rem;background:var(--granit);color:var(--blanc);
+}
+.panneau-haut strong{font-family:"Fraunces",Georgia,serif;font-size:1.2rem;display:block}
+.panneau-haut span{font-size:.82rem;color:var(--or-clair)}
+.panneau-fermer{background:none;border:0;color:var(--blanc);font-size:1.7rem;line-height:1;cursor:pointer;padding:0 .3rem}
+.panneau-etapes{
+  display:flex;list-style:none;gap:.2rem;padding:.9rem 1.5rem;margin:0;
+  background:var(--blanc);border-bottom:1px solid var(--ligne);
+  font-size:.74rem;color:var(--texte-doux);justify-content:space-between;
+}
+.panneau-etapes li{white-space:nowrap}
+.panneau-etapes li.active{color:var(--or);font-weight:700}
+.panneau-corps{padding:1.5rem;overflow-y:auto;flex:1}
+.panneau-corps h4{
+  font-family:"Inter",sans-serif;font-size:.76rem;font-weight:700;letter-spacing:.13em;
+  text-transform:uppercase;color:var(--texte-doux);margin:0 0 .9rem;
+}
+.panneau-corps h4:not(:first-child){margin-top:1.9rem}
+.compteur{
+  display:flex;align-items:center;justify-content:space-between;gap:1rem;
+  padding:.85rem 0;border-bottom:1px solid var(--ligne);
+}
+.compteur strong{display:block;font-size:.98rem;color:var(--texte);font-family:"Inter",sans-serif;font-weight:600}
+.compteur span{font-size:.82rem;color:var(--texte-doux)}
+.compteur-boutons{display:flex;align-items:center;gap:.9rem}
+.compteur-boutons button{
+  width:33px;height:33px;border-radius:50%;border:1.5px solid var(--ligne);
+  background:var(--blanc);color:var(--granit);font-size:1.05rem;cursor:pointer;
+  display:grid;place-items:center;transition:border-color .2s ease,color .2s ease;
+}
+.compteur-boutons button:hover{border-color:var(--or);color:var(--or)}
+.compteur-boutons output{min-width:1.3rem;text-align:center;font-weight:600}
+
+.calendrier{background:var(--blanc);border:1px solid var(--ligne);border-radius:var(--rayon);padding:1.1rem}
+.calendrier-haut{display:flex;align-items:center;justify-content:space-between;margin-bottom:.9rem}
+.calendrier-haut strong{font-family:"Fraunces",Georgia,serif;font-size:1.02rem}
+.calendrier-haut button{
+  width:30px;height:30px;border-radius:50%;border:1px solid var(--ligne);background:none;
+  cursor:pointer;color:var(--granit);font-size:1rem;
+}
+.calendrier-haut button:hover{border-color:var(--or);color:var(--or)}
+.calendrier-haut button:disabled{opacity:.3;cursor:default}
+.calendrier-jours,.calendrier-grille{display:grid;grid-template-columns:repeat(7,1fr);gap:3px}
+.calendrier-jours span{text-align:center;font-size:.72rem;color:var(--texte-doux);padding-bottom:.35rem}
+.calendrier-grille button{
+  aspect-ratio:1;border:0;background:none;border-radius:8px;cursor:pointer;
+  font-size:.86rem;color:var(--texte);transition:background .15s ease,color .15s ease;
+}
+.calendrier-grille button:hover:not(:disabled){background:rgba(210,150,63,.16)}
+.calendrier-grille button.choisi{background:var(--or);color:var(--granit-fonce);font-weight:700}
+.calendrier-grille button.entre{background:rgba(210,150,63,.2)}
+.calendrier-grille button:disabled{color:#BFC3C7;cursor:default}
+.calendrier-grille button.complet{color:#BFC3C7;text-decoration:line-through;cursor:default}
+.calendrier-grille .vide{aspect-ratio:1}
+.calendrier-legende{font-size:.74rem;color:var(--texte-doux);margin-top:.8rem;text-align:center}
+.calendrier-choix{font-size:.9rem;color:var(--texte);margin-top:.6rem;text-align:center;font-weight:600}
+.panneau-demo{
+  margin-top:1.4rem;font-size:.8rem;color:var(--texte-doux);
+  background:rgba(210,150,63,.12);border-radius:8px;padding:.8rem 1rem;
+}
+.panneau-bas{padding:1.2rem 1.5rem;background:var(--blanc);border-top:1px solid var(--ligne)}
+.panneau-bas .bouton{width:100%;justify-content:center}
+.panneau-bas p{font-size:.85rem;color:var(--texte-doux);margin-top:.8rem;text-align:center}
+body.panneau-ouvert{overflow:hidden}
+
+/* ---------- Telephone et tablette ---------- */
+@media (max-width:1000px){
+  .coordonnees-haut{grid-template-columns:repeat(2,1fr)}
+  .bloc-reservation{grid-template-columns:1fr;text-align:left}
+  .bloc-reservation .bouton{justify-self:start}
+}
+@media (max-width:760px){
+  .titre-court{white-space:normal}
+  .reperes ul{grid-template-columns:repeat(2,1fr)}
+  .coordonnees-haut{grid-template-columns:1fr}
+  .tarif-ligne{grid-template-columns:44px 1fr;row-gap:.6rem;padding:1.1rem 1.2rem}
+  .tarif-icone{width:44px;height:44px}
+  .tarif-prix{grid-column:2;font-size:1.5rem}
+  .bande-avis blockquote{flex-basis:290px}
+  .panneau{width:100vw}
+  .panneau-etapes{font-size:.68rem;padding:.8rem 1rem}
+}
+
+/* ---------- Heros : titre et sous-titre tenus sur 2 lignes ---------- */
+@media (min-width:761px){
+  .heros-texte{max-width:62rem}
+  .heros h1{font-size:clamp(2.2rem,4.4vw,3.5rem)}
+  .heros p{max-width:46rem;font-size:1.08rem}
+}
+
+/* ---------- Carte de contact : l adresse ne doit pas se couper n importe ou ---------- */
+.coordonnees-haut a[href^="mailto"] strong{font-size:.86rem;letter-spacing:-.01em;overflow-wrap:anywhere}
