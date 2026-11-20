@@ -3,6 +3,17 @@
 (function () {
   "use strict";
 
+  /* ---- Page d ouverture : elle remonte au bout de 1,5 s ---- */
+  var ouverture = document.getElementById("ouverture");
+  if (ouverture) {
+    setTimeout(function () {
+      document.body.classList.remove("ouverture-en-cours");
+    }, 1500);
+    setTimeout(function () {
+      ouverture.classList.add("enlevee");
+    }, 2600);
+  }
+
   /* ---- Menu qui se pose au défilement ---- */
   var menu = document.getElementById("menu");
   function poserMenu() {
@@ -61,6 +72,20 @@
     }, 3000);
   }
   if (fonds.length > 1) relancer();
+
+  /* ---- Bande d avis : on force un redessin au retour sur l onglet ----
+     Un onglet laisse en arriere-plan peut revenir avec la bande non redessinee.
+     Ce coup de pouce ne touche ni a l animation ni a la position. */
+  var bandeAvis = document.querySelector(".bande-avis");
+  function redessinerBande() {
+    if (!bandeAvis || document.hidden) return;
+    bandeAvis.style.opacity = "0.999";
+    requestAnimationFrame(function () {
+      bandeAvis.style.opacity = "";
+    });
+  }
+  document.addEventListener("visibilitychange", redessinerBande);
+  window.addEventListener("pageshow", redessinerBande);
 
   /* ---- Apparitions au défilement ---- */
   var aMonter = document.querySelectorAll(".monte");

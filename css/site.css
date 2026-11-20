@@ -382,20 +382,26 @@ p{color:var(--texte-doux)}
 .bouton-large{position:relative;z-index:1;padding:1.05rem 2rem;font-size:1.02rem}
 
 /* ---------- Bande d avis defilante ---------- */
-.bande-avis{overflow:hidden;padding:.6rem 0 1rem;-webkit-mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent);mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent)}
-.bande-avis-piste{display:flex;width:max-content;animation:defile 70s linear infinite;will-change:transform}
-.bande-avis-serie{display:flex;gap:1.3rem;padding-right:1.3rem}
+/* Pas de masque ni de will-change : sur macOS, un masque pose sur une bande
+   animee de plusieurs milliers de pixels peut rester blanche a l affichage.
+   Les bords sont adoucis par deux degrades poses par dessus. */
+.bande-avis{position:relative;overflow:hidden;padding:.6rem 0 1rem}
+.bande-avis::before,.bande-avis::after{content:"";position:absolute;top:0;bottom:0;width:6%;z-index:2;pointer-events:none}
+.bande-avis::before{left:0;background:linear-gradient(90deg,var(--blanc),rgba(255,255,255,0))}
+.bande-avis::after{right:0;background:linear-gradient(270deg,var(--blanc),rgba(255,255,255,0))}
+.bande-avis-piste{display:flex;width:max-content;animation:defile 70s linear infinite}
+.bande-avis-serie{display:flex;gap:1.2rem;padding-right:1.2rem}
 .bande-avis blockquote{
-  flex:0 0 352px;background:var(--blanc);border:1px solid var(--ligne);
+  flex:0 0 320px;background:var(--blanc);border:1px solid var(--ligne);
   border-radius:var(--rayon);padding:1.6rem;display:flex;flex-direction:column;gap:.8rem;
   box-shadow:var(--ombre-douce);
 }
 .bande-avis blockquote .etoiles{color:var(--or)}
 .bande-avis blockquote p{font-size:.95rem;color:var(--texte);flex:1;margin:0}
 .bande-avis blockquote footer{font-size:.85rem;color:var(--texte-doux);font-weight:600}
-@keyframes defile{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@keyframes defile{from{transform:translate3d(0,0,0)}to{transform:translate3d(-50%,0,0)}}
 @media (prefers-reduced-motion:reduce){
-  .bande-avis{overflow-x:auto;-webkit-mask-image:none;mask-image:none}
+  .bande-avis{overflow-x:auto}
   .bande-avis-piste{animation-duration:220s}
 }
 
@@ -578,4 +584,30 @@ body.panneau-ouvert{overflow:hidden}
   .grille-tarifs{grid-template-columns:1fr}
   .actions-avis{flex-direction:column;align-items:stretch}
   .actions-avis .bouton{justify-content:center}
+}
+
+/* ---------- Page d ouverture ---------- */
+.ouverture{
+  position:fixed;inset:0;z-index:300;display:grid;place-items:center;overflow:hidden;
+  background:var(--granit);
+  animation:ouverture-monte .9s cubic-bezier(.76,0,.24,1) 1.5s forwards;
+}
+.ouverture-fond{
+  position:absolute;inset:0;
+  background:url("../images/ouverture.jpg") center/cover no-repeat var(--granit);
+}
+.ouverture-fond::after{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(180deg,rgba(28,33,37,.42),rgba(28,33,37,.58) 55%,rgba(28,33,37,.68));
+}
+.ouverture-nom{
+  position:relative;z-index:2;margin:0;padding:0 1.4rem;text-align:center;color:#fff;
+  font-family:"Fraunces","Georgia",serif;font-weight:600;line-height:1.08;letter-spacing:-.01em;
+  font-size:clamp(2.6rem,7.4vw,5.6rem);text-shadow:0 3px 34px rgba(0,0,0,.5);
+}
+@keyframes ouverture-monte{to{transform:translateY(-100%);visibility:hidden}}
+.ouverture.enlevee{display:none}
+body.ouverture-en-cours{overflow:hidden}
+@media (prefers-reduced-motion:reduce){
+  .ouverture{animation-duration:.2s}
 }
