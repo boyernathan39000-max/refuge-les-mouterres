@@ -73,20 +73,6 @@
   }
   if (fonds.length > 1) relancer();
 
-  /* ---- Bande d avis : on force un redessin au retour sur l onglet ----
-     Un onglet laisse en arriere-plan peut revenir avec la bande non redessinee.
-     Ce coup de pouce ne touche ni a l animation ni a la position. */
-  var bandeAvis = document.querySelector(".bande-avis");
-  function redessinerBande() {
-    if (!bandeAvis || document.hidden) return;
-    bandeAvis.style.opacity = "0.999";
-    requestAnimationFrame(function () {
-      bandeAvis.style.opacity = "";
-    });
-  }
-  document.addEventListener("visibilitychange", redessinerBande);
-  window.addEventListener("pageshow", redessinerBande);
-
   /* ---- Apparitions au défilement ---- */
   var aMonter = document.querySelectorAll(".monte");
   if ("IntersectionObserver" in window) {

@@ -381,29 +381,13 @@ p{color:var(--texte-doux)}
 .etiquette-claire{background:rgba(210,150,63,.22);color:var(--or-clair)}
 .bouton-large{position:relative;z-index:1;padding:1.05rem 2rem;font-size:1.02rem}
 
-/* ---------- Bande d avis defilante ---------- */
-/* Pas de masque ni de will-change : sur macOS, un masque pose sur une bande
-   animee de plusieurs milliers de pixels peut rester blanche a l affichage.
-   Les bords sont adoucis par deux degrades poses par dessus. */
-.bande-avis{position:relative;overflow:hidden;padding:.6rem 0 1rem}
-.bande-avis::before,.bande-avis::after{content:"";position:absolute;top:0;bottom:0;width:6%;z-index:2;pointer-events:none}
-.bande-avis::before{left:0;background:linear-gradient(90deg,var(--blanc),rgba(255,255,255,0))}
-.bande-avis::after{right:0;background:linear-gradient(270deg,var(--blanc),rgba(255,255,255,0))}
-.bande-avis-piste{display:flex;width:max-content;animation:defile 70s linear infinite}
-.bande-avis-serie{display:flex;gap:1.2rem;padding-right:1.2rem}
-.bande-avis blockquote{
-  flex:0 0 320px;background:var(--blanc);border:1px solid var(--ligne);
-  border-radius:var(--rayon);padding:1.6rem;display:flex;flex-direction:column;gap:.8rem;
-  box-shadow:var(--ombre-douce);
-}
-.bande-avis blockquote .etoiles{color:var(--or)}
-.bande-avis blockquote p{font-size:.95rem;color:var(--texte);flex:1;margin:0}
-.bande-avis blockquote footer{font-size:.85rem;color:var(--texte-doux);font-weight:600}
-@keyframes defile{from{transform:translate3d(0,0,0)}to{transform:translate3d(-50%,0,0)}}
-@media (prefers-reduced-motion:reduce){
-  .bande-avis{overflow-x:auto}
-  .bande-avis-piste{animation-duration:220s}
-}
+/* ---------- Avis : 6 cases, 3 par ligne ---------- */
+/* La bande defilante a ete retiree le 20/11 : elle pouvait rester blanche
+   a l affichage sur macOS. Les avis sont simplement poses dans une grille. */
+.avis blockquote .etoiles{color:var(--or)}
+.avis blockquote p{margin:0}
+@media (max-width:1000px){ .avis{grid-template-columns:repeat(2,1fr)} }
+@media (max-width:620px){ .avis{grid-template-columns:1fr} }
 
 /* ---------- Coordonnees remontees ---------- */
 .coordonnees-haut{
@@ -516,7 +500,6 @@ body.panneau-ouvert{overflow:hidden}
   .tarif-ligne{grid-template-columns:44px 1fr;row-gap:.6rem;padding:1.1rem 1.2rem}
   .tarif-icone{width:44px;height:44px}
   .tarif-prix{grid-column:2;font-size:1.5rem}
-  .bande-avis blockquote{flex-basis:290px}
   .panneau{width:100vw}
   .panneau-etapes{font-size:.68rem;padding:.8rem 1rem}
 }
