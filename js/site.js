@@ -85,15 +85,6 @@
     });
   }
 
-  /* ---- Bande d'avis : on double la liste pour un défilement sans couture ---- */
-  var piste = document.getElementById("piste-avis");
-  if (piste) {
-    piste.innerHTML += piste.innerHTML;
-    piste.querySelectorAll("blockquote").forEach(function (b, i) {
-      if (i >= piste.children.length / 2) b.setAttribute("aria-hidden", "true");
-    });
-  }
-
   /* ---- Formulaire de question ---- */
   var formulaire = document.getElementById("formulaire");
   var retour = document.getElementById("retour-formulaire");

@@ -147,6 +147,7 @@
           <h3>Le petit déjeuner</h3>
           <p>Boissons chaudes, pain, biscottes, beurre, confiture, fromage et jambon, avant
              de repartir sur le GR.</p>
+          <p class="prix-repas">Compris dans la demi-pension</p>
         </div>
       </article>
       <article class="carte carte-sombre">
@@ -154,7 +155,8 @@
           <span class="etiquette">À emporter</span>
           <h3>Le pique-nique</h3>
           <p>Une galette avec la salade du jardin, du thon et des tomates, une salade
-             individuelle maison, du chocolat et une petite douceur.</p>
+             individuelle maison, du chocolat et une petite douceur. Sur réservation.</p>
+          <p class="prix-repas"><strong>13 €</strong> par personne</p>
         </div>
       </article>
       <article class="carte carte-sombre">
@@ -163,6 +165,7 @@
           <h3>Le repas du soir</h3>
           <p>Soupe de légumes, viande garnie, fromage, dessert. Il est compris dans la
              demi-pension et se prend aussi seul.</p>
+          <p class="prix-repas"><strong>26 €</strong> seul, sans la nuitée</p>
         </div>
       </article>
     </div>
@@ -176,50 +179,57 @@
   <div class="contenu">
     <div class="entete-section entete-centree monte">
       <span class="sur-titre">Tarifs</span>
-      <h2>Ce qui se règle sur place</h2>
-      <p class="intro intro-courte">Les repas et le bivouac se paient au refuge, par chèque ou
-         en espèces. Le prix de votre nuitée s'affiche au moment de la réservation.</p>
+      <h2>La nuit au refuge</h2>
+      <p class="intro intro-courte">Les prix s'entendent par personne et par nuit. Les repas
+         sont détaillés plus haut, dans la section Repas.</p>
     </div>
 
-    <div class="tarifs-repas monte">
-      <article class="tarif-ligne">
-        <span class="tarif-icone">
-          <svg viewBox="0 0 24 24"><path d="M6 3v8a3 3 0 006 0V3M9 11v10M18 3c-1.5 2-2 4-2 6s.5 3 2 3v9"/></svg>
-        </span>
-        <span class="tarif-texte">
-          <strong>Repas du soir</strong>
-          Soupe de légumes, viande garnie, fromage, dessert.
-        </span>
-        <span class="tarif-prix">26 €</span>
+    <div class="grille-tarifs monte">
+      <article class="carte-tarif phare">
+        <span class="etiquette">La formule la plus prise</span>
+        <h3>Demi-pension, adulte</h3>
+        <span class="prix">56,50 €</span>
+        <ul>
+          <li>La nuitée en cabine de 4 ou 5</li>
+          <li>Le repas du soir</li>
+          <li>Le petit déjeuner</li>
+        </ul>
       </article>
-      <article class="tarif-ligne">
-        <span class="tarif-icone">
-          <svg viewBox="0 0 24 24"><path d="M4 9h16l-1.5 11H5.5zM8 9V6a4 4 0 118 0v3"/></svg>
-        </span>
-        <span class="tarif-texte">
-          <strong>Pique-nique</strong>
-          Sur réservation uniquement. Version végétarienne possible.
-        </span>
-        <span class="tarif-prix">13 €</span>
+      <article class="carte-tarif">
+        <span class="etiquette">Moins de 12 ans</span>
+        <h3>Demi-pension, enfant</h3>
+        <span class="prix">40 €</span>
+        <ul>
+          <li>La même formule</li>
+          <li>Au tarif enfant</li>
+        </ul>
       </article>
-      <article class="tarif-ligne">
-        <span class="tarif-icone">
-          <svg viewBox="0 0 24 24"><path d="M12 4L4 20h16zM12 4v16"/></svg>
-        </span>
-        <span class="tarif-texte">
-          <strong>Taxe de bivouac</strong>
-          Pour un bivouac autour du refuge. Présentez-vous au gardien en arrivant.
-        </span>
-        <span class="tarif-prix">3 €</span>
+      <article class="carte-tarif">
+        <span class="etiquette">Accompagnateurs</span>
+        <h3>Tarif AMM</h3>
+        <span class="prix">35 €</span>
+        <ul>
+          <li>Pour l'accompagnateur en montagne</li>
+          <li>Qui encadre un groupe</li>
+        </ul>
+      </article>
+      <article class="carte-tarif">
+        <span class="etiquette">Sous la tente</span>
+        <h3>Taxe de bivouac</h3>
+        <span class="prix">3 €</span>
+        <ul>
+          <li>Bivouac autorisé de 19 h à 7 h</li>
+          <li>Présentez-vous au gardien</li>
+        </ul>
       </article>
     </div>
 
     <div class="bloc-reservation monte">
       <div class="bloc-reservation-texte">
-        <span class="etiquette etiquette-claire">Nuitée et demi-pension</span>
+        <span class="etiquette etiquette-claire">Places restantes</span>
         <h3>Réservez votre place au refuge</h3>
-        <p>Choisissez vos dates et le nombre de personnes : le prix de la nuitée et de la
-           demi-pension s'affiche aussitôt, selon les places encore libres.</p>
+        <p>Choisissez vos dates et le nombre de personnes : les places encore libres
+           s'affichent aussitôt, avec le total de votre séjour.</p>
       </div>
       <button class="bouton bouton-plein bouton-large" data-reserver type="button">Réserver le refuge</button>
     </div>
@@ -353,25 +363,40 @@
     </div>
   </div>
   <div class="bande-avis">
-    <div class="bande-avis-piste" id="piste-avis">
-      <blockquote><div class="etoiles">★★★★★</div><p>« L'équipe du refuge est d'une gentillesse incroyable, ils vous accueillent chaleureusement et ils ont toujours le mot pour rire. De bon conseil pour les itinéraires du plateau. »</p><footer>Jessy R.</footer></blockquote>
-      <blockquote><div class="etoiles">★★★★★</div><p>« Bonne ambiance et très bon accueil. La vue est incroyable, on peut aussi observer des chamois. Demi-pension au top, bien servi et c'est bon. Couchage en dortoir confortable. »</p><footer>Lionel M.</footer></blockquote>
-      <blockquote><div class="etoiles">★★★★★</div><p>« Première expérience entre amies en refuge. Tout était parfait : la gentillesse et la disponibilité des gardiens, le lieu avec une vue magnifique, la propreté du refuge, les repas faits maison. »</p><footer>Frédérique B.</footer></blockquote>
-      <blockquote><div class="etoiles">★★★★★</div><p>« Passage d'une nuit en demi-pension en famille, première fois pour nos 6 et 10 ans. Tout le monde a été conquis : la nourriture, le confort des couchages, la disponibilité des gardiens. »</p><footer>Boune S.</footer></blockquote>
-      <blockquote><div class="etoiles">★★★★★</div><p>« Raphaël et Stéphanie sont des hôtes incroyables. Notre trek a été embelli par leur accueil et leur générosité. »</p><footer>Élodie L.</footer></blockquote>
-      <blockquote><div class="etoiles">★★★★★</div><p>« Super nuit au refuge des Mouterres. Nous avons passé une nuit en demi-pension avec mon groupe d'amis randonneurs, 15 personnes. On se sent accueilli chaleureusement, le refuge est propre et fonctionnel. Le repas du soir était délicieux. »</p><footer>Émilie C.</footer></blockquote>
-      <blockquote><div class="etoiles">★★★★★</div><p>« Gîte tenu par un couple fort sympathique, beau partage avec eux sur le territoire et l'environnement. Nourriture et couchage excellents. »</p><footer>Michel M.</footer></blockquote>
-      <blockquote><div class="etoiles">★★★★★</div><p>« Super expérience. Le personnel est très agréable et donne de super conseils. La vue est splendide et vous pourrez même admirer les animaux des montagnes. »</p><footer>Paul S.</footer></blockquote>
-      <blockquote><div class="etoiles">★★★★★</div><p>« Nous sommes venus le 2 août au soir et nous avons été extrêmement bien accueillis dans le refuge. Nous tenons donc à vous remercier. »</p><footer>Romain F.</footer></blockquote>
-      <blockquote><div class="etoiles">★★★★★</div><p>« Nous nous sommes rendus avec notre chien pour le week-end du 15 août. Nous avons eu un super accueil, un temps magnifique et un dîner formidable. À l'année prochaine. »</p><footer>Chloé Y.</footer></blockquote>
+    <div class="bande-avis-piste">
+      <div class="bande-avis-serie">
+        <blockquote><div class="etoiles">★★★★★</div><p>« L'équipe du refuge est d'une gentillesse incroyable, ils vous accueillent chaleureusement et ils ont toujours le mot pour rire. De bon conseil pour les itinéraires du plateau. »</p><footer>Jessy R.</footer></blockquote>
+        <blockquote><div class="etoiles">★★★★★</div><p>« Bonne ambiance et très bon accueil. La vue est incroyable, on peut aussi observer des chamois. Demi-pension au top, bien servi et c'est bon. Couchage en dortoir confortable. »</p><footer>Lionel M.</footer></blockquote>
+        <blockquote><div class="etoiles">★★★★★</div><p>« Première expérience entre amies en refuge. Tout était parfait : la gentillesse et la disponibilité des gardiens, le lieu avec une vue magnifique, la propreté du refuge, les repas faits maison. »</p><footer>Frédérique B.</footer></blockquote>
+        <blockquote><div class="etoiles">★★★★★</div><p>« Passage d'une nuit en demi-pension en famille, première fois pour nos 6 et 10 ans. Tout le monde a été conquis : la nourriture, le confort des couchages, la disponibilité des gardiens. »</p><footer>Boune S.</footer></blockquote>
+        <blockquote><div class="etoiles">★★★★★</div><p>« Raphaël et Stéphanie sont des hôtes incroyables. Notre trek a été embelli par leur accueil et leur générosité. »</p><footer>Élodie L.</footer></blockquote>
+        <blockquote><div class="etoiles">★★★★★</div><p>« Super nuit au refuge des Mouterres. Nous avons passé une nuit en demi-pension avec mon groupe d'amis randonneurs, 15 personnes. On se sent accueilli chaleureusement, le refuge est propre et fonctionnel. Le repas du soir était délicieux. »</p><footer>Émilie C.</footer></blockquote>
+        <blockquote><div class="etoiles">★★★★★</div><p>« Gîte tenu par un couple fort sympathique, beau partage avec eux sur le territoire et l'environnement. Nourriture et couchage excellents. »</p><footer>Michel M.</footer></blockquote>
+        <blockquote><div class="etoiles">★★★★★</div><p>« Super expérience. Le personnel est très agréable et donne de super conseils. La vue est splendide et vous pourrez même admirer les animaux des montagnes. »</p><footer>Paul S.</footer></blockquote>
+        <blockquote><div class="etoiles">★★★★★</div><p>« Nous sommes venus le 2 août au soir et nous avons été extrêmement bien accueillis dans le refuge. Nous tenons donc à vous remercier. »</p><footer>Romain F.</footer></blockquote>
+        <blockquote><div class="etoiles">★★★★★</div><p>« Nous nous sommes rendus avec notre chien pour le week-end du 15 août. Nous avons eu un super accueil, un temps magnifique et un dîner formidable. À l'année prochaine. »</p><footer>Chloé Y.</footer></blockquote>
+      </div>
+      <div class="bande-avis-serie">
+        <blockquote aria-hidden="true"><div class="etoiles">★★★★★</div><p>« L'équipe du refuge est d'une gentillesse incroyable, ils vous accueillent chaleureusement et ils ont toujours le mot pour rire. De bon conseil pour les itinéraires du plateau. »</p><footer>Jessy R.</footer></blockquote>
+        <blockquote aria-hidden="true"><div class="etoiles">★★★★★</div><p>« Bonne ambiance et très bon accueil. La vue est incroyable, on peut aussi observer des chamois. Demi-pension au top, bien servi et c'est bon. Couchage en dortoir confortable. »</p><footer>Lionel M.</footer></blockquote>
+        <blockquote aria-hidden="true"><div class="etoiles">★★★★★</div><p>« Première expérience entre amies en refuge. Tout était parfait : la gentillesse et la disponibilité des gardiens, le lieu avec une vue magnifique, la propreté du refuge, les repas faits maison. »</p><footer>Frédérique B.</footer></blockquote>
+        <blockquote aria-hidden="true"><div class="etoiles">★★★★★</div><p>« Passage d'une nuit en demi-pension en famille, première fois pour nos 6 et 10 ans. Tout le monde a été conquis : la nourriture, le confort des couchages, la disponibilité des gardiens. »</p><footer>Boune S.</footer></blockquote>
+        <blockquote aria-hidden="true"><div class="etoiles">★★★★★</div><p>« Raphaël et Stéphanie sont des hôtes incroyables. Notre trek a été embelli par leur accueil et leur générosité. »</p><footer>Élodie L.</footer></blockquote>
+        <blockquote aria-hidden="true"><div class="etoiles">★★★★★</div><p>« Super nuit au refuge des Mouterres. Nous avons passé une nuit en demi-pension avec mon groupe d'amis randonneurs, 15 personnes. On se sent accueilli chaleureusement, le refuge est propre et fonctionnel. Le repas du soir était délicieux. »</p><footer>Émilie C.</footer></blockquote>
+        <blockquote aria-hidden="true"><div class="etoiles">★★★★★</div><p>« Gîte tenu par un couple fort sympathique, beau partage avec eux sur le territoire et l'environnement. Nourriture et couchage excellents. »</p><footer>Michel M.</footer></blockquote>
+        <blockquote aria-hidden="true"><div class="etoiles">★★★★★</div><p>« Super expérience. Le personnel est très agréable et donne de super conseils. La vue est splendide et vous pourrez même admirer les animaux des montagnes. »</p><footer>Paul S.</footer></blockquote>
+        <blockquote aria-hidden="true"><div class="etoiles">★★★★★</div><p>« Nous sommes venus le 2 août au soir et nous avons été extrêmement bien accueillis dans le refuge. Nous tenons donc à vous remercier. »</p><footer>Romain F.</footer></blockquote>
+        <blockquote aria-hidden="true"><div class="etoiles">★★★★★</div><p>« Nous nous sommes rendus avec notre chien pour le week-end du 15 août. Nous avons eu un super accueil, un temps magnifique et un dîner formidable. À l'année prochaine. »</p><footer>Chloé Y.</footer></blockquote>
+      </div>
     </div>
   </div>
-  <div class="contenu" style="text-align:center;margin-top:2.4rem">
+  <div class="contenu actions-avis" style="margin-top:2.4rem">
+    <button class="bouton bouton-plein" data-reserver type="button">Réserver</button>
     <a class="bouton bouton-sombre" href="https://www.google.com/maps?cid=14616006006192825225" target="_blank" rel="noopener">Lire les avis sur Google</a>
   </div>
 </section>
 
-<section class="section reserver" id="contact">
+<section class="section reserver sur-photo-contact" id="contact" style="background-image:url('images/fond-contact.jpg')">
   <div class="contenu">
     <div class="entete-section monte">
       <span class="sur-titre">Contact</span>

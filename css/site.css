@@ -383,8 +383,8 @@ p{color:var(--texte-doux)}
 
 /* ---------- Bande d avis defilante ---------- */
 .bande-avis{overflow:hidden;padding:.6rem 0 1rem;-webkit-mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent);mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent)}
-.bande-avis-piste{display:flex;gap:1.3rem;width:max-content;animation:defile 85s linear infinite}
-.bande-avis:hover .bande-avis-piste{animation-play-state:paused}
+.bande-avis-piste{display:flex;width:max-content;animation:defile 70s linear infinite;will-change:transform}
+.bande-avis-serie{display:flex;gap:1.3rem;padding-right:1.3rem}
 .bande-avis blockquote{
   flex:0 0 352px;background:var(--blanc);border:1px solid var(--ligne);
   border-radius:var(--rayon);padding:1.6rem;display:flex;flex-direction:column;gap:.8rem;
@@ -393,10 +393,10 @@ p{color:var(--texte-doux)}
 .bande-avis blockquote .etoiles{color:var(--or)}
 .bande-avis blockquote p{font-size:.95rem;color:var(--texte);flex:1;margin:0}
 .bande-avis blockquote footer{font-size:.85rem;color:var(--texte-doux);font-weight:600}
-@keyframes defile{from{transform:translateX(0)}to{transform:translateX(calc(-50% - .65rem))}}
+@keyframes defile{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 @media (prefers-reduced-motion:reduce){
-  .bande-avis{overflow-x:auto}
-  .bande-avis-piste{animation:none}
+  .bande-avis{overflow-x:auto;-webkit-mask-image:none;mask-image:none}
+  .bande-avis-piste{animation-duration:220s}
 }
 
 /* ---------- Coordonnees remontees ---------- */
@@ -524,3 +524,58 @@ body.panneau-ouvert{overflow:hidden}
 
 /* ---------- Carte de contact : l adresse ne doit pas se couper n importe ou ---------- */
 .coordonnees-haut a[href^="mailto"] strong{font-size:.86rem;letter-spacing:-.01em;overflow-wrap:anywhere}
+
+/* ---------- Prix dans les cases de la section Repas ---------- */
+.prix-repas{
+  margin-top:auto;padding-top:.9rem;border-top:1px solid rgba(255,255,255,.14);
+  font-size:.92rem;color:var(--texte-clair);
+}
+.prix-repas strong{
+  font-family:"Fraunces",Georgia,serif;font-size:1.35rem;color:var(--or-clair);
+  margin-right:.3rem;font-weight:600;
+}
+
+/* ---------- Grille tarifaire de l hebergement ---------- */
+.grille-tarifs{display:grid;grid-template-columns:repeat(4,1fr);gap:1.2rem;align-items:stretch}
+.carte-tarif{
+  background:var(--blanc);border:1px solid var(--ligne);border-radius:var(--rayon);
+  padding:1.8rem 1.6rem;display:flex;flex-direction:column;gap:.4rem;
+  transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease;
+}
+.carte-tarif:hover{transform:translateY(-4px);box-shadow:var(--ombre)}
+.carte-tarif.phare{border-color:var(--or);box-shadow:0 14px 36px rgba(210,150,63,.18)}
+.carte-tarif h3{font-size:1.1rem;margin:.1rem 0 .2rem}
+.carte-tarif .prix{
+  font-family:"Fraunces",Georgia,serif;font-size:2.2rem;color:var(--granit);line-height:1.1;
+}
+.carte-tarif ul{list-style:none;margin-top:1rem;padding-top:1rem;border-top:1px solid var(--ligne);display:grid;gap:.5rem}
+.carte-tarif li{
+  position:relative;padding-left:1.4rem;font-size:.9rem;color:var(--texte-doux);
+}
+.carte-tarif li::before{
+  content:"";position:absolute;left:0;top:.45em;width:9px;height:5px;
+  border-left:1.8px solid var(--or);border-bottom:1.8px solid var(--or);transform:rotate(-45deg);
+}
+
+/* ---------- Les deux boutons sous les avis ---------- */
+.actions-avis{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+
+/* ---------- Section contact sur photo ---------- */
+.sur-photo-contact{
+  position:relative;background-size:cover;background-position:center;background-attachment:fixed;
+}
+.sur-photo-contact::before{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(180deg,rgba(26,31,35,.72),rgba(26,31,35,.88));
+}
+.sur-photo-contact>.contenu{position:relative;z-index:2}
+
+@media (max-width:1000px){
+  .grille-tarifs{grid-template-columns:repeat(2,1fr)}
+  .sur-photo-contact{background-attachment:scroll}
+}
+@media (max-width:760px){
+  .grille-tarifs{grid-template-columns:1fr}
+  .actions-avis{flex-direction:column;align-items:stretch}
+  .actions-avis .bouton{justify-content:center}
+}
