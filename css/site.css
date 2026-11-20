@@ -594,3 +594,25 @@ body.ouverture-en-cours{overflow:hidden}
 @media (prefers-reduced-motion:reduce){
   .ouverture{animation-duration:.2s}
 }
+
+/* ---------- Contact : toutes les cases sur fond clair ---------- */
+/* Demande de Nathan du 20/11 : sur la photo, les cases etaient sombres et se
+   lisaient mal. Les quatre coordonnees, les champs du formulaire et le cadre
+   de la carte passent sur fond clair, texte en granit. La section garde sa
+   photo : seules les cases changent. */
+#contact .coordonnees-haut a,
+#contact .coordonnees-haut .sans-lien{
+  background:var(--blanc);border-color:var(--ligne);box-shadow:var(--ombre-douce);
+}
+#contact .coordonnees-haut a:hover{background:var(--brume-chaude);border-color:var(--or)}
+#contact .coordonnees-haut a span,
+#contact .coordonnees-haut span span{color:var(--texte-doux)}
+#contact .coordonnees-haut strong{color:var(--texte)}
+#contact .champ input,
+#contact .champ textarea{
+  background:var(--blanc);border:1px solid var(--ligne);color:var(--texte);
+  box-shadow:var(--ombre-douce);
+}
+#contact .champ input::placeholder,
+#contact .champ textarea::placeholder{color:var(--texte-doux);opacity:1}
+#contact .carte-lieu{border-color:var(--ligne);background:var(--blanc);box-shadow:var(--ombre-douce)}
